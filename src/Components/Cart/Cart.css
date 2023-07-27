@@ -1,0 +1,129 @@
+.cart {
+    max-width: 900px;
+    margin: 12px auto;
+}
+
+.cart-heading {
+    display: flex;
+    justify-content: center;
+    margin: 16px auto;
+}
+
+.cart-heading-text {
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    font-size: 26px;
+}
+
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-content {
+    display: flex;
+}
+
+.cart-left {
+    flex: 2;
+}
+
+.cart-right {
+    flex: 1;
+    margin-left: 12px;
+}
+
+.cart-items {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.cart-summary {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 16px;
+}
+
+.cart-container {
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+    background-color: lightgoldenrodyellow;
+    border-radius: 12px;
+    -webkit-border-radius: 1rem;
+}
+
+.cart-total {
+    border-bottom: 1px solid lightgray;
+}
+
+.cart-total-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-subtotal {
+    font-weight: bold;
+}
+
+.cart-subtotal-price {
+    font-weight: bold;
+}
+.cart-subtotal-description {
+    padding-top: 12px;
+    font-size: 15px;
+}
+
+.checkout-button {
+    font-weight: bold;
+    background-color: black;
+    padding: 12px 20px;
+    color: white;
+    width: 300px;
+    cursor: pointer;
+    border: none;
+    box-shadow: black;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.checkout-button:active {
+  transform: scale(0.95);
+}
+
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.empty-cart-heading {
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+}
+
+.empty-cart-description {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 12px;
+}
+
+.continuebutton {
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: black;
+    color: white;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    padding: 12px 20px;
+}
+
+.continuebutton:active {
+    transform: scale(0.95);
+}

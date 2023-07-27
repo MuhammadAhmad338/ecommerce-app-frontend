@@ -1,0 +1,28 @@
+.heading {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.heading-paragraph-title {
+    font-weight: bold;
+    color: black;
+    font-size: 32px;
+}
+
+.heading-paragraph {
+    text-align: center;
+    font-size: 1rem; 
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-top: 35px;
+    margin-bottom: 35px; 
+}

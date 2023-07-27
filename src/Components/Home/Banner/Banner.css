@@ -1,0 +1,23 @@
+.container {
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.banner-button {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Nunito', sans-serif;
+    background-color: #fff;
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}

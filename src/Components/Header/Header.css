@@ -1,0 +1,37 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.header-icon img {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.header-title a {
+    text-decoration: none;
+    color: black;
+}
+
+.header-cart {
+    display: flex;
+    gap: 16px;
+}
+
+.header-cart svg {
+    cursor: pointer;
+    font-size: 25px;
+}

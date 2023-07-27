@@ -1,0 +1,26 @@
+.related-product {
+    max-width: 850px;
+    margin: 8px auto;
+}
+
+.related-product-heading {
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 24px;
+}
+
+.carousel-container {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.carousel-item {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.carousel {
+    margin-bottom: 24px;
+}
