@@ -13,7 +13,7 @@ const MyContext = ({ children }) => {
 
   const fetchProducts = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3000/getAllProducts`);
+      const { data } = await axios.get(`https://webapp001.onrender.com/getAllProducts`);
       setProducts(data);
     } catch (error) {
       console.log(error);
@@ -23,7 +23,7 @@ const MyContext = ({ children }) => {
   const fetchSingleProduct = async (id) => {
     try {
       console.log(id);
-      const { data } = await axios.get(`http://localhost:3000/getProduct/${id}`);
+      const { data } = await axios.get(`https://webapp001.onrender.com/getProduct/${id}`);
       return data;
     } catch (error) {
       console.log('Error fetching single product:', error);
