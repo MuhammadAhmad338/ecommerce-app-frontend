@@ -9,7 +9,7 @@ const MyContext = ({ children }) => {
   const [gotProducts, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [cartSubTotal, setCartSubTotal] = useState(0);
-  const [cartCount, setCartCount] = useState(0);
+  const [search, setSearch] = useState([]);
 
   const fetchProducts = async () => {
     try {
@@ -27,6 +27,16 @@ const MyContext = ({ children }) => {
       return data;
     } catch (error) {
       console.log('Error fetching single product:', error);
+    }
+  }
+
+  const searchProduct = async (query) => {
+    try {
+      const data = await axios.get(`https://webapp001.onrender.com/searchProduct?title=`+query);
+      console.log(data.data);
+      setSearch(data.data);
+    } catch (error) {
+      console.log(`Some error occured ${error}`);
     }
   }
 
@@ -50,14 +60,16 @@ const MyContext = ({ children }) => {
   useEffect(() => {
     let subTotal = 0;
     for (let i = 0; i < cartItems.length; i++) {
-     subTotal += cartItems[i].price;  
+      subTotal += cartItems[i].price;
     }
     setCartSubTotal(subTotal);
 
     fetchProducts();
   }, [cartItems]);
 
-  return <Context.Provider value={{ gotProducts, cartItems, cartSubTotal, fetchSingleProduct, handleAddToCart, removeFromCart }}>
+  return <Context.Provider value={{ gotProducts, search, cartItems,
+    cartSubTotal, fetchSingleProduct, searchProduct,
+    handleAddToCart, removeFromCart }}>
     {children}
   </Context.Provider>
 }

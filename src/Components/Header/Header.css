@@ -35,3 +35,42 @@
     cursor: pointer;
     font-size: 25px;
 }
+
+/* Style the dropdown menu */
+.has-dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #555;
+    min-width: 160px;
+    z-index: 1;
+  }
+  
+  .has-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu span {
+    display: block;
+    padding: 8px;
+  }
+  
+  .dropdown-menu span a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .dropdown-menu span a:hover {
+    background-color: #444;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .header-title {
+        display: none;
+    }
+  }

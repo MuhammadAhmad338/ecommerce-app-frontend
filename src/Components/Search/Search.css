@@ -1,0 +1,36 @@
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-input {
+    padding: 12px;
+}
+
+.inputIT {
+    padding: 8px 10px;
+    font-weight: bold;
+    font-size: 12px;
+    width: 500px;
+}
+
+.search-dropdown {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background-color: papayawhip;
+    color: black;
+    width: 100%;
+    padding: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.search-dropdown:hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+}

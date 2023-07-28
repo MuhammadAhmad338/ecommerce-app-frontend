@@ -21,7 +21,7 @@ const Home = () => {
       {/* heading and paragaph here */}
       <div className='product-list'>
         {gotProducts?.map((item) => (
-          <ProductCard product={item} />
+          <ProductCard key={item._id} product={item} />
         ))}
       </div>
 
