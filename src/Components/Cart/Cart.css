@@ -127,3 +127,12 @@
 .continuebutton:active {
     transform: scale(0.95);
 }
+
+@media  screen and (max-width: 768px) {
+    .cart-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
