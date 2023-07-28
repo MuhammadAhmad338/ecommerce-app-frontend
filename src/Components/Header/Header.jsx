@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
 import { MdOutlineFavoriteBorder } from 'react-icons/md';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { BiSearchAlt } from 'react-icons/bi';
 import { RiArrowDropDownLine } from 'react-icons/ri';
 import { useNavigate } from 'react-router';
+import { Context } from '../../Context/MyContext';
 import prod from '../../assets/adidas.png';
 import './Header.css';
 
 const Header = () => {
 
     const navigate = useNavigate();
-    const [categoryDropDown, setcategoryDropDown] = useState(false);
+    const { cartItems } = useContext(Context);
 
     return (
         <>
@@ -35,10 +36,12 @@ const Header = () => {
                 <div className='header-cart'>
                     <BiSearchAlt onClick={() => navigate('/search')} />
                     <MdOutlineFavoriteBorder />
-                    <AiOutlineShoppingCart onClick={() => navigate('/cart')} />
+                    <AiOutlineShoppingCart className='cart-icon' onClick={() => navigate('/cart')} />
+                    {!!cartItems.length && <div class="cart-count-container">
+                        <span class="cart-count">{cartItems.length}</span>
+                    </div>}
                 </div>
             </div>
-
         </>
     );
 }

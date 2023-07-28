@@ -22,7 +22,6 @@ const MyContext = ({ children }) => {
 
   const fetchSingleProduct = async (id) => {
     try {
-      console.log(id);
       const { data } = await axios.get(`https://webapp001.onrender.com/getProduct/${id}`);
       return data;
     } catch (error) {
@@ -33,7 +32,6 @@ const MyContext = ({ children }) => {
   const searchProduct = async (query) => {
     try {
       const data = await axios.get(`https://webapp001.onrender.com/searchProduct?title=`+query);
-      console.log(data.data);
       setSearch(data.data);
     } catch (error) {
       console.log(`Some error occured ${error}`);
