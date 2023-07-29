@@ -8,10 +8,11 @@ import './Cart.css';
 const Cart = () => {
 
   const navigate = useNavigate();
-  const { cartItems, cartSubTotal} = useContext(Context);
+  const { cartItems, cartSubTotal } = useContext(Context);
 
   return (
     <div className="cart">
+
       {!!cartItems.length && <>
         <div className="cart-heading">
           <div className="cart-heading-text">
@@ -23,7 +24,7 @@ const Cart = () => {
           <div className='cart-left'>
             <div className="cart-items">Cart Items</div>
             {cartItems.map((cartItem) => (
-              <CartItem cartItem={cartItem} />
+              <CartItem key={cartItem._id} cartItem={cartItem} />
             ))}
           </div>
 
@@ -48,11 +49,10 @@ const Cart = () => {
             <button className='checkout-button' onClick={() => { }}>CheckOut</button>
           </div>
         </div>
-
       </>}
 
       {
-        !cartItems.length && 
+      !cartItems.length &&
         <div className="empty-cart">
           <img src={img} alt="" height={300} width={300} />
           <span className="empty-cart-heading">Your Cart is Empty</span>
@@ -61,8 +61,8 @@ const Cart = () => {
             Go ahead and explore top categories
           </span>
           <button className="continuebutton" onClick={() => navigate("/")}>Continue Shopping</button>
-        </div>  
-      }  
+        </div>
+      }
 
     </div>
   )

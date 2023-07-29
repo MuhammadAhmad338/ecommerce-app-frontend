@@ -149,3 +149,10 @@
 .addtowishlist-button:active {
     transform: scale(0.95);
 }
+
+@media screen and (max-width: 768px) {
+    .product-details {
+        display: flex;
+        flex-direction: column;
+    }
+}
