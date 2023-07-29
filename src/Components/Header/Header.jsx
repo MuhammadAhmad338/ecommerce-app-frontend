@@ -12,7 +12,7 @@ import './Header.css';
 const Header = () => {
 
     const navigate = useNavigate();
-    const { cartItems } = useContext(Context);
+    const { cartItems, categoryProduct } = useContext(Context);
 
     return (
         <>
@@ -26,9 +26,9 @@ const Header = () => {
                     <div className="has-dropdown">
                         <span className="category-title">Category</span>
                         <div className="dropdown-menu">
-                            <span><a href="#shoes">Shoes</a></span>
-                            <span><a href="#mens-shoes">Men's Shoes</a></span>
-                            <span><a href="#mens-basketball-shoes">Men's Basketball Shoes</a></span>
+                            <span onClick={() => categoryProduct({name: "Shoe"})}>Shoe</span>
+                            <span onClick={() => categoryProduct({name: "Men's Shoes"})}>Men's Shoes</span>
+                            <span onClick={() => categoryProduct({name: "Men's Basketball Shoes"})}>Men's Basketball Shoes</span>
                         </div>
                     </div>
                     <span onClick={() => navigate("/contact")}>Contact</span>

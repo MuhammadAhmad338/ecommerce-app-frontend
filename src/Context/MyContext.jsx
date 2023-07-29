@@ -9,6 +9,7 @@ const MyContext = ({ children }) => {
   const [gotProducts, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [cartSubTotal, setCartSubTotal] = useState(0);
+  const [categoryProducts, setcategoryProducts] = useState([]);
   const [search, setSearch] = useState([]);
 
   const fetchProducts = async () => {
@@ -37,6 +38,15 @@ const MyContext = ({ children }) => {
       console.log(`Some error occured ${error}`);
     }
   }
+
+  const categoryProduct = async (categoryName) => {
+    try {
+      const response = await axios.get(`http://localhost:8080/category/${categoryName.name}`);
+      setcategoryProducts(response.data);
+    } catch(error) {
+      console.log(`Some error occured ${error}`);
+    }
+  } 
 
   const handleAddToCart = (product) => {
     let items = [...cartItems];
@@ -67,7 +77,7 @@ const MyContext = ({ children }) => {
 
   return <Context.Provider value={{ gotProducts, search, cartItems,
     cartSubTotal, fetchSingleProduct, searchProduct,
-    handleAddToCart, removeFromCart }}>
+    handleAddToCart, removeFromCart, categoryProduct }}>
     {children}
   </Context.Provider>
 }
