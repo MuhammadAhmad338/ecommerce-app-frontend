@@ -13,7 +13,7 @@ const ProductDetailsCarousal = ({ product }) => {
                 thumbWidth={60}
                 className='productCarousel'>
                {
-                  product.images?.map((image) => <img src={image.secure_url} alt=''/> )
+                  product.images?.map((image) => <img key={image} src={image.secure_url} alt=''/> )
                }
             </Carousel>
         </div>

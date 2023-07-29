@@ -71,6 +71,7 @@
 .cart-subtotal-price {
     font-weight: bold;
 }
+
 .cart-subtotal-description {
     padding-top: 12px;
     font-size: 15px;
@@ -90,7 +91,7 @@
 }
 
 .checkout-button:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
 .empty-cart {
@@ -128,7 +129,7 @@
     transform: scale(0.95);
 }
 
-@media  screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .cart-content {
         display: flex;
         align-items: center;

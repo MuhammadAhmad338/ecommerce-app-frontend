@@ -41,8 +41,12 @@ const MyContext = ({ children }) => {
 
   const categoryProduct = async (categoryName) => {
     try {
-      const response = await axios.get(`http://localhost:8080/category/${categoryName.name}`);
-      setcategoryProducts(response.data);
+      const response = await axios.get(`https://webapp001.onrender.com/category/${categoryName.name}`);
+      
+      for (let i = 0; i < response.data.length; i++) {
+        setcategoryProducts(response.data[i].products);
+      }
+      
     } catch(error) {
       console.log(`Some error occured ${error}`);
     }
@@ -77,7 +81,7 @@ const MyContext = ({ children }) => {
 
   return <Context.Provider value={{ gotProducts, search, cartItems,
     cartSubTotal, fetchSingleProduct, searchProduct,
-    handleAddToCart, removeFromCart, categoryProduct }}>
+    handleAddToCart, removeFromCart, categoryProduct, categoryProducts }}>
     {children}
   </Context.Provider>
 }

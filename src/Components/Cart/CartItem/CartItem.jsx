@@ -33,7 +33,7 @@ const CartItem = ({ cartItem }) => {
              <div className="shoe-sizes-text"> Size: </div>
              <select>
                {cartItem.sizes.data.map((item) => (
-                  <option value="1">{item.size}</option>
+                  <option key={item.size} value="1">{item.size}</option>
                ))}
              </select>
            </div>

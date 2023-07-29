@@ -64,19 +64,17 @@ const ProductDetails = () => {
 
 
               <div className='product-sizes-list'>
-                {singleProduct.sizes?.data.map((item) => (
-                  <div className='product-size'>
-                    {item.size}
-                  </div>
-                ))}
+                {singleProduct.sizes?.data.map((item) => {
+                  <div key={item.size} className='product-size'>
+                  {item.size}
+                </div>
+                })}
               </div>
 
             </div>
 
             <div className='buttons'>
-              <button className='addtocart-button' onClick={() => {handleAddToCart(singleProduct),
-              console.log(singleProduct);
-              }}>
+              <button className='addtocart-button' onClick={() => {handleAddToCart(singleProduct)}}>
                 Add to Cart
               </button>
               <button className='addtowishlist-button'>

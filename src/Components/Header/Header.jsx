@@ -1,9 +1,7 @@
 import React, { useContext } from 'react';
-import { useState } from 'react';
 import { MdOutlineFavoriteBorder } from 'react-icons/md';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { BiSearchAlt } from 'react-icons/bi';
-import { RiArrowDropDownLine } from 'react-icons/ri';
 import { useNavigate } from 'react-router';
 import { Context } from '../../Context/MyContext';
 import prod from '../../assets/adidas.png';
@@ -26,9 +24,18 @@ const Header = () => {
                     <div className="has-dropdown">
                         <span className="category-title">Category</span>
                         <div className="dropdown-menu">
-                            <span onClick={() => categoryProduct({name: "Shoe"})}>Shoe</span>
-                            <span onClick={() => categoryProduct({name: "Men's Shoes"})}>Men's Shoes</span>
-                            <span onClick={() => categoryProduct({name: "Men's Basketball Shoes"})}>Men's Basketball Shoes</span>
+                            <span onClick={() => {
+                                categoryProduct({ name: "Shoe" }),
+                                    navigate(`/category/Shoe`)
+                            }}>Shoe</span>
+                            <span onClick={() => {
+                                categoryProduct({ name: "Men's Shoes" }),
+                                    navigate(`/category/Men's Shoes`)
+                            }}>Men's Shoes</span>
+                            <span onClick={() => {
+                                categoryProduct({ name: "Men's Basketball Shoes" }),
+                                    navigate("/category/Mens's Basketball Shoes")
+                            }}>Men's Basketball Shoes</span>
                         </div>
                     </div>
                     <span onClick={() => navigate("/contact")}>Contact</span>
@@ -37,8 +44,8 @@ const Header = () => {
                     <BiSearchAlt onClick={() => navigate('/search')} />
                     <MdOutlineFavoriteBorder />
                     <AiOutlineShoppingCart className='cart-icon' onClick={() => navigate('/cart')} />
-                    {!!cartItems.length && <div class="cart-count-container">
-                        <span class="cart-count">{cartItems.length}</span>
+                    {!!cartItems.length && <div className="cart-count-container">
+                        <span className="cart-count">{cartItems.length}</span>
                     </div>}
                 </div>
             </div>

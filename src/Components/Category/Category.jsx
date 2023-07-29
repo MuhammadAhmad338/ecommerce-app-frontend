@@ -1,25 +1,28 @@
-import React from 'react'
-import './Category.css'
-import ProductCard from '../ProductCard/ProductCard'
+import React, { useContext } from 'react';
+import ProductCard from '../ProductCard/ProductCard';
+import { Context } from '../../Context/MyContext';
+import { useParams } from 'react-router-dom';
+import './Category.css';
 
 const Category = () => {
+
+  const { categoryProducts } = useContext(Context);
+  const { id } = useParams();
+
   return (
     <div className='category-container'>
-
       <div className='category-container-div'>
         <div className='category-container-heading'>
-          Running Shoes
+          {id}
         </div>
       </div>
-
       <div className='category-product-list'>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
-          <ProductCard />
+        {categoryProducts.map((item) => (
+          <ProductCard key={item._id} product={item} />
         ))}
       </div>
-
     </div>
-  )
+  );
 }
 
-export default Category
+export default Category;
